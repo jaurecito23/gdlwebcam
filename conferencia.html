@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Pagina Web</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lightbox.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Oswald:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body class="conferencia">
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+    <header class="site-header">
+
+        <div class="hero">
+
+            <div class="contenido-header">
+
+                    <nav class="redes-sociales">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </nav>
+
+                    <div class="informacion-evento">
+                      <div class="clearfix">
+                      <p class="fecha"><i class="fas fa-calendar-alt"></i> 10-12 Dic</p>
+                      <p class="ciudad"><i class="fas fa-map-marker-alt"></i>Guadalajara, MX</p>
+                    </div>
+
+                    <h1 class="nombre-sitio">GdlWebCamp</h1>
+                    <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
+                  </div><!-- Informacion evento -->
+            </div>
+        </div>
+        <!--.hero-->
+    </header>
+
+    <div class="barra">
+        <div class="contenedor clearfix">
+          <div class="logo">
+              <img src="img/logo.svg" alt="Logo GDLWEBCAM">
+          </div>
+          <div class="menu-movil">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <nav class="navegacion-principal  clearfix">
+              <a href="conferencia.html"
+             class="activo">Conferencia</a>
+              <a href="#">Calendario</a>
+              <a href="#">Invitados</a>
+              <a href="registro.html">Reservaciones</a>
+           </nav>
+
+        </div><!--Contenedor-->
+    </div><!--BARRA NAVEGACIÓN-->
+
+    <section class="seccion contenedor">
+        <h2>La mejor Conferencia de diseño Web en Español</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem laudantium deserunt vitae soluta quam molestiae ipsa quae facere non aliquam fuga, laborum obcaecati optio maiores qui iusto nulla. Quos, temporibus.</p>
+    </section><!--Section Intro-->
+
+    <section class="section galeria-contenedor  contenedor">
+      <h2>Galeria de Fotos</h2>
+
+      <div class="galeria">
+        <a href="img/galeria/01.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/01.jpg">
+        </a>
+        <a href="img/galeria/02.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/02.jpg">
+        </a>
+        <a href="img/galeria/03.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/03.jpg">
+        </a>
+        <a href="img/galeria/04.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/04.jpg">
+        </a>
+        <a href="img/galeria/05.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/05.jpg">
+        </a>
+        <a href="img/galeria/06.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/06.jpg">
+        </a>
+        <a href="img/galeria/07.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/07.jpg">
+        </a>
+        <a href="img/galeria/08.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/08.jpg">
+        </a>
+        <a href="img/galeria/09.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/09.jpg">
+        </a>
+        <a href="img/galeria/10.jpg" data-lightbox="galeria">
+          <img src="img/galeria/thumbs/10.jpg">
+        </a>
+      </div>
+
+    </section>
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+
+
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="js/vendor/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/jquery.countdown.min.js" ></script>
+  <script src="js/jquery.animateNumber.min.js" ></script>
+  <script src="js/jquery.lettering.js" ></script>
+  <script src="js/lightbox.js" ></script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    </script>
+  <script src="js/scripts.js"></script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+</body>
+
+</html>
