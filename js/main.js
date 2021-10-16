@@ -25,6 +25,17 @@
 
      var etiquetas = document.getElementById("etiquetas");
      var camisas = document.getElementById("camisa_evento");
+
+     // Deshabilitar el boton registro de submmit
+
+     if(botonRegistro !== null){
+
+         botonRegistro.disabled = true;
+
+        }
+
+
+
     document.addEventListener("DOMContentLoaded",function(){
 
         let mapa = document.querySelector("#mapa");
@@ -72,6 +83,11 @@
 
 
 if(pase_dia !== null){
+
+
+
+    // Blur es el evento que se ejeuto cuando el elemento pierde el foco
+
 
     pase_dia.addEventListener("blur",mostrarDia)
     pase_dosdias.addEventListener("blur",mostrarDia)
@@ -179,7 +195,9 @@ if(pase_dia !== null){
 
             suma.innerHTML = "$ "+totalPagar.toFixed(2);
 
+            botonRegistro.disabled = false;
 
+            document.getElementById('total_pedido').value = totalPagar;
 
        }
 
@@ -246,18 +264,25 @@ $(function(){
     $(".nombre-sitio").lettering();
     // Programa de conferencias
     $(".programa-evento .info-curso:first").show();
+
+    // Le pone la clase activo al primer menu de opciones
     $(".menu-programa a:first").addClass("activo");
 
+
+    //Evento a las opciones
     $(".menu-programa a").on("click",function (e) {
 
         e.preventDefault();
         var enlace = $(this).attr("href");
 
+
+        //Lo oculta bajando la opacidad
         $(".programa-evento .info-curso").fadeOut(100);
 
         $(".menu-programa a").removeClass("activo");
         $(this).addClass("activo");
 
+         //Lo muestr subiendo la opacidad
         $(enlace).fadeIn(1000);
 
         return false;
@@ -331,7 +356,19 @@ $(function(){
 
     })
 
-    //
+
+    //Agregar clase al menu
+
+    $("body.conferencia .navegacion-principal a:contains('Conferencia')").addClass("activo");
+    $("body.calendario .navegacion-principal a:contains('Calendario')").addClass("activo");
+    $("body.invitados .navegacion-principal a:contains('Invitados')").addClass("activo");
+
+    //COLORBOX EN INVITADOS
+
+    $(".invitado-info").colorbox({inline:true,width:"50%"});
+
+     $("#colorbox-mailchimp").hide();
+    $(".boton_newsletter").colorbox({inline:true,width:"50%"});
 
 
 });
