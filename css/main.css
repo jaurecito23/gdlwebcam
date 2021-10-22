@@ -1444,6 +1444,22 @@ div.resumen input{
 }
 
 
+.resultado {
+
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  max-width: 400px;
+  margin: 2rem auto;
+
+}
+.correcto{
+  background-color: rgb(2,173,2);
+}
+
+.error{
+  background-color:red;
+}
 
 
 

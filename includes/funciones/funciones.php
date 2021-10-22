@@ -20,7 +20,9 @@ $dias = array(
 
 );
 
+
 $total_boletos = array_combine($dias, $boletos);
+
 
 $json = array();
 

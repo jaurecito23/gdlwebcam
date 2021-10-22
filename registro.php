@@ -5,7 +5,7 @@
 
 
       <h2>Registro de Usuarios</h2>
-      <form class="registro" action="validar_registro.php" method="POST" id="registro">
+      <form class="registro" action="pagar.php" method="POST" id="registro">
         <div id="datos_usuarios" class="registro caja clearfix">
           <div class="campo">
             <label for="nombre">Nombre:</label>
@@ -39,7 +39,8 @@
 
                 <div class="orden">
                   <label for="pase_dia"> Boletos Deseados: </label>
-                  <input type="number" min="1" id="pase_dia" name="boletos[]" size="2" placeholder="0">
+                  <input type="number" min="1" id="pase_dia" name="boletos[un_dia][cantidad]" size="2" placeholder="0">
+                  <input type="hidden"  name="boletos[un_dia][precio]" value="30">
                 </div>
               </div>
             </li>
@@ -56,7 +57,8 @@
 
                 <div class="orden">
                   <label for="pase_completo"> Boletos Deseados: </label>
-                  <input type="number" min="1" id="pase_completo" name="boletos[]" size="2" placeholder="0">
+                  <input type="number" min="1" id="pase_completo" name="boletos[completo][cantidad]" size="2" placeholder="0">
+                  <input type="hidden"  name="boletos[completo][precio]" value="50">
                 </div>
               </div>
             </li>
@@ -73,7 +75,8 @@
 
                 <div class="orden">
                   <label for="pase_dosdias"> Boletos Deseados: </label>
-                  <input type="number" min="1" id="pase_dosdias" name="boletos[]" size="2" placeholder="0">
+                  <input type="number" min="1" id="pase_dosdias" name="boletos[dosdias][cantidad]" size="2" placeholder="0">
+                  <input type="hidden"  name="boletos[dosdias][precio]" value="45">
                 </div>
               </div>
               </li>
@@ -194,11 +197,13 @@
             <div class="extras">
               <div class="orden">
                   <label for="camisa_evento" > Camisa del evento $10 <small>(Promoción 7% dto.)</small></label>
-                  <input type="number" min="0" name="pedido_camisas" id="camisa_evento" placeholder="0" size="3">
+                  <input type="number" min="0" name="pedido_extra[camisas][cantidad]" id="camisa_evento" placeholder="0" size="3">
+                  <input type="hidden"  name="pedido_extra[camisas][precio]" value="10">
               </div><!--Orden-->
               <div class="orden">
                   <label for="etiquetas">Paquete de 10 etiquetas $2 <small>(HTML5 , CSS3,JavaScript)</small></label>
-                  <input type="number" name="pedido_etiquetas" min="0" id="etiquetas" placeholder="0" size="3">
+                  <input type="number" name="pedido_extra[etiquetas][cantidad]" min="0" id="etiquetas" placeholder="0" size="3">
+                  <input type="hidden"  name="pedido_extra[etiquetas][precio]" value="2">
               </div><!--Orden-->
               <div class="orden">
                   <label for="regalo">Seleccione un regalo</label><br><br>
