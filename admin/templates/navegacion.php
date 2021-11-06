@@ -11,7 +11,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">Hola: Facundo Jauregui</a>
+          <a href="#" class="d-block">Hola: <?php echo $_SESSION["nombre"];?></a>
         </div>
       </div>
 
@@ -66,14 +66,14 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="lista-eventos.php" class="nav-link">
                   <i class="fa fa-list-ul  nav-icon"></i>
                   <p>Ver Todos.</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="crear-evento.php" class="nav-link">
                   <i class="fa fa-plus-circle  nav-icon"></i>
                   <p>Agregar Evento.</p>
                 </a>
@@ -186,6 +186,12 @@
 
           <!-- Administradores -->
 
+          <?php
+
+           if($_SESSION["nivel"]==1):
+
+          ?>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
@@ -199,7 +205,7 @@
           <ul class="nav nav-treeview">
 
             <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="lista-admin.php" class="nav-link">
               <i class="fa fa-list-ul  nav-icon"></i>
               <p>Ver Todos.</p>
             </a>
@@ -214,7 +220,7 @@
 
           </ul>
         </li>
-
+<?php endif;?>
         <!-- Administradores -->
 
 

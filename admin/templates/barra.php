@@ -1,3 +1,7 @@
+<body class="hold-transition sidebar-mini">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+
  <!-- Navbar -->
  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -46,12 +50,12 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
+        <a class="nav-link" href="editar-admin.php?id=<?php echo $_SESSION["id_admin"];?>" role="button">
           Ajustes
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  data-slide="true" href="#" role="button">
+        <a class="nav-link"  data-slide="true" href="login.php?cerrarsession=true" role="button">
           Cerrar Session
         </a>
       </li>

@@ -2,6 +2,20 @@
 <?php require_once "funciones/funciones.php";?>
 
 
+<?php
+
+  $id = intval($_GET["id"] ?? null);
+
+  if(!filter_var($id,FILTER_VALIDATE_INT)){
+
+      die("Error!");
+
+  };
+
+?>
+
+
+
 <?php include_once "templates/header.php"; ?>
 
 
@@ -16,8 +30,6 @@
 
 
 
-
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -25,8 +37,8 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Crear Administrador.</h1>
-            <small>LLena el formulario para crear un Administrador</small>
+            <h1>Editar Administrador.</h1>
+            <small>Modifica el formulario para editar el Administrador</small>
           </div>
           <div class="col-sm-6">
 
@@ -44,7 +56,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Crear Administrador</h3>
+          <h3 class="card-title">Editar Administrador</h3>
 
 
         </div>
@@ -60,7 +72,14 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+              <?php
+                $sql = "SELECT * FROM admins WHERE id_admin = $id LIMIT 1;";
+               $resultado = $conn->query($sql);
 
+               $admin = $resultado->fetch_assoc();
+
+
+              ?>
 
                   <form class="form-horizontal" name="guardar-registro" id="guardar-registro" method="POST" action="modelo-admin.php">
                       <div class="card-body">
@@ -68,29 +87,22 @@
                   <div class="form-group row">
                     <label for="usuario" class="col-sm-2 col-form-label">Usuario: </label>
                     <div class="col-sm-10">
-                      <input type="text"  class="form-control" id="usuario"  name="usuario" placeholder="Usuario">
+                      <input type="text"  class="form-control" value="<?php echo $admin["usuario"] ?>" id="usuario"  name="usuario" placeholder="Usuario">
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                      <input type="text" class="form-control" value="<?php echo $admin["nombre"] ?>"  id="nombre" name="nombre" placeholder="Nombre">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+                    <label for="contraseña" class="col-sm-2 col-form-label">Contraseña</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                      <input type="password" class="form-control" id="contraseña" name="password" placeholder="Contraseña">
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="repetir_password" class="col-sm-2 col-form-label">Repetir Contraseña</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Contraseña">
-                    </div>
-                    <span id="resultado_password" class="helo-block"></span>
                   </div>
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
@@ -103,9 +115,9 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <input type="hidden" name="registro" value="nuevo">
-
-                  <button type="submit"  class="btn btn-info" id="crear-registro-admin">Añadir</button>
+                    <input type="hidden" name="registro" value="actualizar">
+                    <input type="hidden" name="id_registro" value="<?php echo $id; ?>">
+                  <button type="submit"  class="btn btn-info">Guardar</button>
                   <button type="submit" class="btn btn-default float-right">Cancel</button>
                 </div>
                 <!-- /.card-footer -->

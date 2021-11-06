@@ -12,7 +12,5 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="css/adminlte.min.css">
   <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 </head>
-<body class="hold-transition sidebar-mini">
-  <!-- Site wrapper -->
-  <div class="wrapper">

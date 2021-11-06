@@ -1,0 +1,24 @@
+.login-page .main-footer{
+
+        display: none;
+
+
+}
+
+.correcto{
+
+        color: green !important;
+        border: 1px solid green !important;
+
+}
+.incorrecto{
+
+        color: red !important;
+        border: 1px solid red !important;
+}
+
+.margin-auto{
+
+        margin: auto;
+
+}
